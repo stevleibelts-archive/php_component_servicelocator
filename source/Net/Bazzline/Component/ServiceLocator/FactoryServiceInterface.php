@@ -18,7 +18,7 @@ interface FactoryServiceInterface
     /**
      * Returns a new service
      *
-     * @return mixed
+     * @return \stdClass
      * @throws \RuntimeException - if no parameter container is set
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01

@@ -43,6 +43,38 @@ The configuration is able to read from a file, compile this configuration and wr
 
 ### Connection Between Components
 
+## Example
+
+Example of an service locator configuration
+
+    ```php
+    return array(
+        'service' => array(
+            'getMyClassService' => array(
+                'factoryClass' => 'myFactory',
+                'alias' => 'getClassService',   //optional, default is no alias
+                'isShared' => true              //optional, default is false
+            )
+        ),
+        'manager' => array(
+            'myManagerOne' => array(
+                'factoryClass' => 'myFactory',
+                'methodCalls' => array(
+                    'setMethodOne' => array(
+                        'parameterOne' => 'valueOne',
+                        'parameterTwo' => 'valueTwo'
+                    )
+                ),
+                'is_abstract' => true,                  //optional
+                'parentManager' => 'myManagerMaster',   //optional
+                'alias' => 'managerOne'                 //optional
+            )
+        ),
+        'alias' => array(
+            'superManager' => 'myManagerOne'
+        )
+    );
+
 ## Thanks
 
 Thanks to the [symfony framework](http://symfony.com/doc/current/components "symfony current components"), the [dependency component](http://symfony.com/doc/current/components/dependency_injection/ "dependency component of symfony"), the [zend framework 2](http://framework.zend.com/manual/2.2/en/ "manual of zend framework 2.2"), its [service manager](http://framework.zend.com/manual/2.2/en/index.html#zend-servicemanager "service manager manual of zend framework 2.2") and the [dependecy injection](http://framework.zend.com/manual/2.2/en/modules/zend.di.introduction.html "dependency injection manual of zend framework 2.2").

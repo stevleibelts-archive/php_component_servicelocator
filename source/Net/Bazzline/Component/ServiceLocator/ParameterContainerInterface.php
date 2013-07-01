@@ -51,9 +51,10 @@ interface ParameterContainerInterface
      *
      * @param string $name - name of the parameter
      * @param mixed $value - value of the parameter
+     * @param bool $isRequired - is parameter required
      * @throw \InvalidArgumentException - if you want to overwrite an already set parameter
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
-    public function setParameter($name, $value);
+    public function setParameter($name, $value, $isRequired = true);
 }
