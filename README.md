@@ -7,6 +7,42 @@ Of course it will be heavily influenced by both and i'm happy that i can have a 
 
 If it turns out to be useful, i will slice some components into separate components.
 
+## Ideas And Structure
+
+### Components
+
+#### ServiceLocator
+
+The service locator is the main parted of this component. Is is using all following parts to build up a central point for creating object instances. It also handles the alias dealing for the internal components.
+The service locator can be instantiated by using a configuration.
+
+#### Invoke
+
+The invoke is a class, that is directly instantiated without using a factory method. It can use a manager for dependency injection if needed.
+A invoke can have an alias.
+
+#### Service
+
+The service uses the manger to provide a factory that provides the ability to create an object instance from a class with fully injected dependencies.
+A service can provide a single instance of a class or multiple instances of a class. This behaviour can be configured by the shared flag.
+A service can have an alias.
+
+#### Manager
+
+The manager provides the dependency handling for services or invokes.
+A manager can have an alias.
+
+#### ParameterContainer
+
+Component to provide exchange between components.
+
+#### Configuration and Builder
+
+A configuration is used to configure the service locator and its internal components via a configuration file (php, yaml, xml, json).
+The configuration is able to read from a file, compile this configuration and writes the service locator to a php file.
+
+### Connection Between Components
+
 ## Thanks
 
-Thanks to the [symfony framework](http://symfony.com/doc/current/components "symfony current components") and the [dependency component](http://symfony.com/doc/current/components/dependency_injection/ "dependency component of symfony") and also to the [zend framework 2](http://framework.zend.com/manual/2.2/en/ "manual of zend framework 2.2") and its [service manager](http://framework.zend.com/manual/2.2/en/index.html#zend-servicemanager "service manager manual of zend framework 2.2").
+Thanks to the [symfony framework](http://symfony.com/doc/current/components "symfony current components"), the [dependency component](http://symfony.com/doc/current/components/dependency_injection/ "dependency component of symfony"), the [zend framework 2](http://framework.zend.com/manual/2.2/en/ "manual of zend framework 2.2"), its [service manager](http://framework.zend.com/manual/2.2/en/index.html#zend-servicemanager "service manager manual of zend framework 2.2") and the [dependecy injection](http://framework.zend.com/manual/2.2/en/modules/zend.di.introduction.html "dependency injection manual of zend framework 2.2").
