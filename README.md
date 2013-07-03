@@ -9,6 +9,11 @@ If it turns out to be useful, i will slice some components into separate compone
 
 ## Ideas And Structure
 
+### Terms
+
+* Arguments are parameter used in an constructor
+* methodCalls are having a name and an array of parameters
+
 ### Components
 
 #### ServiceLocator
@@ -32,11 +37,27 @@ A service can have an alias.
 The manager provides the dependency handling for services or invokes.
 A manager can have an alias.
 
+#### Initializer
+
+Initialize classes by using reflection api or iterating over implemented interface (like injecting ServiceLocator if ServiceLocatorAwareInterface is implemented)
+
 #### ParameterContainer
 
 Component to provide exchange between components.
 
-#### Configuration and Builder
+#### Builder
+
+A Builder is a component that knows how to build up the class by providing the "addMethodCall(string $methodName, array $values" and "setParameters(array $parameterNamesToValue)".
+A Builder can be configured by an configuration file or by using a factory.
+[Reference](http://symfony.com/doc/current/components/dependency_injection/introduction.html)
+It is using the ParamterContainer to store defined parameters.
+
+#### Definition
+
+A definition represents what should be done to instantiate a class.
+[Reference](http://symfony.com/doc/current/components/dependency_injection/definitions.html)
+
+#### Configuration
 
 A configuration is used to configure the service locator and its internal components via a configuration file (php, yaml, xml, json).
 The configuration is able to read from a file, compile this configuration and writes the service locator to a php file.
