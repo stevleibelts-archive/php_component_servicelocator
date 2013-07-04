@@ -13,23 +13,13 @@ namespace Net\Bazzline\Component\ServiceLocator;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-01
  */
-interface ServiceLocatorInterface
+interface ServiceLocatorInterface extends AliasInterface
 {
-    /**
-     * Returns the alias for provided name or null
-     *
-     * @param string $name
-     * @return null|string
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
-     */
-    public function getAlias($name);
-
     /**
      * Returns the manager by given name or alias
      *
      * @param string $name
-     * @return ManagerInterface
+     * @return ManagerDefinitionInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
@@ -45,13 +35,35 @@ interface ServiceLocatorInterface
      */
     public function getName($alias);
 
+    /**
+     * @param string $name
+     * @return mixed
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-01
+     */
     public function getService($name);
 
-    public function hasAlias($name);
-
+    /**
+     * @param string $name
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-01
+     */
     public function hasManager($name);
 
+    /**
+     * @param string $name
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-01
+     */
     public function hasName($name);
 
+    /**
+     * @param string $name
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-01
+     */
     public function hasService($name);
 }
