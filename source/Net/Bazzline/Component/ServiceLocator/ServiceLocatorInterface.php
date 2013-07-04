@@ -16,6 +16,30 @@ namespace Net\Bazzline\Component\ServiceLocator;
 interface ServiceLocatorInterface extends AliasInterface
 {
     /**
+     * @param ManagerDefinitionInterface $manager
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function addManager(ManagerDefinitionInterface $manager);
+
+    /**
+     * @param ServiceDefinitionInterface $service
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function addService(ServiceDefinitionInterface $service);
+
+    /**
+     * @param InvokableDefinitionInterface $invokable
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function addInvokable(InvokableDefinitionInterface $invokable);
+
+    /**
      * Returns the manager by given name or alias
      *
      * @param string $name
