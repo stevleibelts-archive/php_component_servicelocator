@@ -73,14 +73,14 @@ Example of an service locator configuration
         'service' => array(
             //name => properties
             'getMyClassService' => array(
-                'builderClass' => 'myFactory',
+                'builder' => 'myFactory',       //can be a factory or a manager
                 'alias' => 'getClassService',   //optional, default is no alias
                 'isShared' => true              //optional, default is false
             )
         ),
         'manager' => array(
             'myManagerOne' => array(
-                'builderClass' => 'myFactory',
+                'builder' => 'myFactory',
                 'methodCalls' => array(
                     'setMethodOne' => array(
                         'parameterOne' => 'valueOne',
@@ -99,3 +99,8 @@ Example of an service locator configuration
 ## Thanks
 
 Thanks to the [symfony framework](http://symfony.com/doc/current/components "symfony current components"), the [dependency component](http://symfony.com/doc/current/components/dependency_injection/ "dependency component of symfony"), the [zend framework 2](http://framework.zend.com/manual/2.2/en/ "manual of zend framework 2.2"), its [service manager](http://framework.zend.com/manual/2.2/en/index.html#zend-servicemanager "service manager manual of zend framework 2.2") and the [dependecy injection](http://framework.zend.com/manual/2.2/en/modules/zend.di.introduction.html "dependency injection manual of zend framework 2.2").
+
+## Links
+
+[ServiceLocator mfowler](http://martinfowler.com/articles/injection.html#UsingAServiceLocator)
+[ServiceLocator Oracle](http://www.oracle.com/technetwork/java/servicelocator-137181.html)
