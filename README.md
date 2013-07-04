@@ -78,6 +78,12 @@ Example of an service locator configuration
                 'isShared' => true              //optional, default is false
             )
         ),
+        'invokable' => array(
+            'myClass' => array(
+                'className' => 'Full\Qualified\Class\Name',
+                'alias' => 'getClassService',   //optional, default is no alias
+            )
+        ),
         'manager' => array(
             'myManagerOne' => array(
                 'builder' => 'myFactory',
