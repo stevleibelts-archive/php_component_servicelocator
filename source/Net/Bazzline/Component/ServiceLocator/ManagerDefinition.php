@@ -16,7 +16,7 @@ use RuntimeException;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-04
  */
-class ManagerDefinition extends Definition
+class ManagerDefinition extends Definition implements ManagerDefinitionInterface
 {
     /**
      * @var string
@@ -26,15 +26,7 @@ class ManagerDefinition extends Definition
     protected $className;
 
     /**
-     * @var BuilderDefinition
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    protected $builderDefinition;
-
-    /**
-     * @param string $className
-     * @throws \InvalidArgumentException
+     * {@inheritdoc}
      */
     public function setClassName($className)
     {
@@ -47,10 +39,7 @@ class ManagerDefinition extends Definition
     }
 
     /**
-     * @return string
-     * @throws \RuntimeException
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
+     * {@inheritdoc}
      */
     public function getClassName()
     {

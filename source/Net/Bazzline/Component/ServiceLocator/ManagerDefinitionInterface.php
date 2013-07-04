@@ -6,23 +6,26 @@
 
 namespace Net\Bazzline\Component\ServiceLocator;
 
-
-interface ManagerDefinitionInterface extends AliasInterface
+/**
+ * Class ManagerDefinitionInterface
+ *
+ * @package Net\Bazzline\Component\ServiceLocator
+ * @author stev leibelt <artodeto@arcor.de>
+ * @since 2013-07-04
+ */
+interface ManagerDefinitionInterface extends DefinitionInterface
 {
     /**
-     * Validates if given manager is an abstract manager or not
-     *
-     * @return boolean
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
+     * @param string $className
+     * @throws \InvalidArgumentException
      */
-    public function isAbstract();
+    public function setClassName($className);
 
-    public function setIsAbstract();
-
-    public function setParent(ManagerDefinitionInterface $parent);
-
-    public function setFactory(FactoryServiceInterface $factory);
-
-    public function setParameters(ParameterContainerInterface $parameters);
+    /**
+     * @return string
+     * @throws \RuntimeException
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function getClassName();
 }
