@@ -30,6 +30,13 @@ class Definition implements DefinitionInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */
+    protected $arguments;
+
+    /**
+     * @var array
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
     protected $methodCalls;
 
     /**
@@ -99,5 +106,40 @@ class Definition implements DefinitionInterface
         $this->methodCalls = $methodCalls;
 
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addConstructorArgument(array $argument)
+    {
+        if (is_null($this->arguments)) {
+            $this->arguments = array();
+        }
+
+        $this->arguments[] = $argument;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConstructorArgument($index)
+    {
+        if (is_null($this->arguments)
+            || !isset($this->arguments[$index])) {
+            throw new InvalidArgumentException(
+                'Index does not exists'
+            );
+        }
+
+        return $this->arguments[$index];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConstructorArguments()
+    {
+        return (is_null($this->arguments)) ? array() : $this->arguments;
     }
 }

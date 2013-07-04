@@ -33,10 +33,35 @@ interface DefinitionInterface extends AliasInterface
     public function getMethodCalls();
 
     /**
-     * @param array $methodCalls
+     * @param array $methodCalls[$methodName => array $arguments[$name => $value]]
      * @return $this
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */
     public function setMethodCalls(array $methodCalls);
+
+    /**
+     * @param array $argument
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     * @todo create argument class
+     */
+    public function addConstructorArgument(array $argument);
+
+    /**
+     * @param int $index
+     * @return mixed
+     * @throws \InvalidArgumentException
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function getConstructorArgument($index);
+
+    /**
+     * @return array $arguments[$index => array[$name => $value]]
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function getConstructorArguments();
 }
