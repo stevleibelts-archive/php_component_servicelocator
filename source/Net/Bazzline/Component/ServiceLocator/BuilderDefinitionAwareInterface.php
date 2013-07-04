@@ -15,9 +15,9 @@ namespace Net\Bazzline\Component\ServiceLocator;
  */
 interface BuilderDefinitionAwareInterface
 {
-
     /**
      * @param \Net\Bazzline\Component\ServiceLocator\BuilderDefinitionInterface $builderDefinition
+     * @return $this
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */

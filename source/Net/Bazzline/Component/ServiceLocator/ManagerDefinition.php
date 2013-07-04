@@ -26,11 +26,11 @@ class ManagerDefinition extends Definition
     protected $className;
 
     /**
-     * @var FactoryDefinition
+     * @var BuilderDefinition
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */
-    protected $factoryDefinition;
+    protected $builderDefinition;
 
     /**
      * @param string $className
@@ -60,31 +60,5 @@ class ManagerDefinition extends Definition
             );
         }
         return $this->className;
-    }
-
-    /**
-     * @param \Net\Bazzline\Component\ServiceLocator\FactoryDefinition $factoryDefinition
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    public function setFactoryDefinition($factoryDefinition)
-    {
-        $this->factoryDefinition = $factoryDefinition;
-    }
-
-    /**
-     * @return \Net\Bazzline\Component\ServiceLocator\FactoryDefinition
-     * @throws \RuntimeException
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    public function getFactoryDefinition()
-    {
-        if (is_null($this->factoryDefinition)) {
-            throw new RuntimeException(
-                'Empty mandatory value detected'
-            );
-        }
-        return $this->factoryDefinition;
     }
 }

@@ -16,7 +16,7 @@ use RuntimeException;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-04
  */
-class Definition implements DefinitionInterface
+class Definition implements DefinitionInterface, BuilderDefinitionAwareInterface
 {
     /**
      * @var string
@@ -24,6 +24,13 @@ class Definition implements DefinitionInterface
      * @since 2013-07-04
      */
     protected $alias;
+
+    /**
+     * @var BuilderDefinitionInterface
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    protected $builderDefinition;
 
     /**
      * @var array
@@ -175,5 +182,28 @@ class Definition implements DefinitionInterface
             );
         }
         $this->name = (string) $name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setBuilderDefinition(BuilderDefinitionInterface $builderDefinition)
+    {
+        $this->builderDefinition = $builderDefinition;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBuilderDefinition()
+    {
+        if (is_null($this->builderDefinition)) {
+            throw new RuntimeException(
+                'Empty mandatory value detected'
+            );
+        }
+        return $this->builderDefinition;
     }
 }
