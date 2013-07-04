@@ -76,7 +76,7 @@ interface DefinitionInterface extends AliasInterface
 
     /**
      * @return string
-     * @throws \InvalidArgumentExcetion, if not set
+     * @throws \InvalidArgumentException, if not set
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */
