@@ -9,15 +9,15 @@ namespace Net\Bazzline\Component\ServiceLocator;
 use InvalidArgumentException;
 use RuntimeException;
 
-class ManagerDefinition implements AliasInterface
+/**
+ * Class ManagerDefinition
+ *
+ * @package Net\Bazzline\Component\ServiceLocator
+ * @author stev leibelt <artodeto@arcor.de>
+ * @since 2013-07-04
+ */
+class ManagerDefinition extends Definition
 {
-    /**
-     * @var string
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    protected $alias;
-
     /**
      * @var string
      * @author stev leibelt <artodeto@arcor.de>
@@ -86,39 +86,5 @@ class ManagerDefinition implements AliasInterface
             );
         }
         return $this->factoryDefinition;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAlias()
-    {
-        if (!$this->hasAlias()) {
-            throw new InvalidArgumentException(
-                'No alias set'
-            );
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function hasAlias()
-    {
-        return (!is_null($this->alias));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setAlias($alias)
-    {
-        if ($this->hasAlias()) {
-            throw new RuntimeException(
-                'Alias already set'
-            );
-        }
-
-        $this->alias = (string) $alias;
     }
 }
