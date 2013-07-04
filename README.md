@@ -68,19 +68,19 @@ The configuration is able to read from a file, compile this configuration and wr
 
 Example of an service locator configuration
 
-    ```php
+    ```
     return array(
         'service' => array(
             //name => properties
             'getMyClassService' => array(
-                'factoryClass' => 'myFactory',
+                'builderClass' => 'myFactory',
                 'alias' => 'getClassService',   //optional, default is no alias
                 'isShared' => true              //optional, default is false
             )
         ),
         'manager' => array(
             'myManagerOne' => array(
-                'factoryClass' => 'myFactory',
+                'builderClass' => 'myFactory',
                 'methodCalls' => array(
                     'setMethodOne' => array(
                         'parameterOne' => 'valueOne',
