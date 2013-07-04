@@ -34,7 +34,7 @@ interface AliasInterface
 
     /**
      * Sets alias. Common practice is to use a unique alias
-     * Example service.mailtransporter
+     * Example service.mail.transporter
      *
      * @param string $alias
      * @return $this
