@@ -71,6 +71,7 @@ Example of an service locator configuration
     ```php
     return array(
         'service' => array(
+            //name => properties
             'getMyClassService' => array(
                 'factoryClass' => 'myFactory',
                 'alias' => 'getClassService',   //optional, default is no alias
@@ -86,8 +87,7 @@ Example of an service locator configuration
                         'parameterTwo' => 'valueTwo'
                     )
                 ),
-                'is_abstract' => true,                  //optional
-                'parentManager' => 'myManagerMaster',   //optional
+                'parentManager' => 'myManagerMaster',   //optional, only for configuration not used as class property
                 'alias' => 'managerOne'                 //optional
             )
         ),
