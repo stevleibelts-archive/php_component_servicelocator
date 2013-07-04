@@ -23,7 +23,7 @@ class ServiceDefinition extends Definition
     protected $isShared;
 
     /**
-     * @param boolean $isShared
+     * {@inheritdoc}
      */
     public function setIsShared($isShared)
     {
@@ -31,7 +31,7 @@ class ServiceDefinition extends Definition
     }
 
     /**
-     * @return boolean
+     * {@inheritdoc}
      */
     public function getIsShared()
     {
