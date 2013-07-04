@@ -64,4 +64,21 @@ interface DefinitionInterface extends AliasInterface
      * @since 2013-07-04
      */
     public function getConstructorArguments();
+
+    /**
+     * @param string $name
+     * @return $this
+     * @throws \RuntimeException, if already set
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function setName($name);
+
+    /**
+     * @return string
+     * @throws \InvalidArgumentExcetion, if not set
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function getName();
 }

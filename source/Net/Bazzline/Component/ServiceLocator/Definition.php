@@ -40,6 +40,13 @@ class Definition implements DefinitionInterface
     protected $methodCalls;
 
     /**
+     * @var string
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    protected $name;
+
+    /**
      * {@inheritdoc}
      */
     public function getAlias()
@@ -141,5 +148,32 @@ class Definition implements DefinitionInterface
     public function getConstructorArguments()
     {
         return (is_null($this->arguments)) ? array() : $this->arguments;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        if (is_null($this->name)) {
+            throw new InvalidArgumentException(
+                'Mandatory parameter name not set'
+            );
+        }
+
+        return $this->name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setName($name)
+    {
+        if (!is_null($this->name)) {
+            throw new RuntimeException(
+                'Name already set'
+            );
+        }
+        $this->name = (string) $name;
     }
 }
