@@ -33,7 +33,7 @@ interface DefinitionInterface extends AliasInterface
     public function getMethodCalls();
 
     /**
-     * @param array $methodCalls[$methodName => array $arguments[$name => $value]]
+     * @param array $methodCalls[$methodName => array $constructorArguments[$name => $value]]
      * @return $this
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
@@ -59,7 +59,7 @@ interface DefinitionInterface extends AliasInterface
     public function getConstructorArgument($index);
 
     /**
-     * @return array $arguments[$index => array[$name => $value]]
+     * @return array $constructorArguments[$index => array[$name => $value]]
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */

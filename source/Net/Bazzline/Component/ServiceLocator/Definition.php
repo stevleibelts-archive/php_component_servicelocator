@@ -30,7 +30,7 @@ class Definition implements DefinitionInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */
-    protected $arguments;
+    protected $constructorArguments;
 
     /**
      * @var array
@@ -120,11 +120,11 @@ class Definition implements DefinitionInterface
      */
     public function addConstructorArgument(array $argument)
     {
-        if (is_null($this->arguments)) {
-            $this->arguments = array();
+        if (is_null($this->constructorArguments)) {
+            $this->constructorArguments = array();
         }
 
-        $this->arguments[] = $argument;
+        $this->constructorArguments[] = $argument;
     }
 
     /**
@@ -132,14 +132,14 @@ class Definition implements DefinitionInterface
      */
     public function getConstructorArgument($index)
     {
-        if (is_null($this->arguments)
-            || !isset($this->arguments[$index])) {
+        if (is_null($this->constructorArguments)
+            || !isset($this->constructorArguments[$index])) {
             throw new InvalidArgumentException(
                 'Index does not exists'
             );
         }
 
-        return $this->arguments[$index];
+        return $this->constructorArguments[$index];
     }
 
     /**
@@ -147,7 +147,7 @@ class Definition implements DefinitionInterface
      */
     public function getConstructorArguments()
     {
-        return (is_null($this->arguments)) ? array() : $this->arguments;
+        return (is_null($this->constructorArguments)) ? array() : $this->constructorArguments;
     }
 
     /**
