@@ -24,7 +24,7 @@ interface ParameterContainerInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
-    public function getParameter($name);
+    public function get($name);
 
     /**
      * Checks if a parameter is set
@@ -34,7 +34,7 @@ interface ParameterContainerInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
-    public function hasParameter($name);
+    public function has($name);
 
     /**
      * Checks if all parameters are set
@@ -44,7 +44,7 @@ interface ParameterContainerInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
-    public function hasParameters(array $names);
+    public function hasAll(array $names);
 
     /**
      * Set a parameter value by name
@@ -52,9 +52,20 @@ interface ParameterContainerInterface
      * @param string $name - name of the parameter
      * @param mixed $value - value of the parameter
      * @param bool $isRequired - is parameter required
+     * @return $this
      * @throw \InvalidArgumentException - if you want to overwrite an already set parameter
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
-    public function setParameter($name, $value, $isRequired = true);
+    public function set($name, $value, $isRequired = true);
+
+    /**
+     * @param string $name
+     * @param mixed $value
+     * @param bool $isRequired
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    public function replace($name, $value, $isRequired = true);
 }
