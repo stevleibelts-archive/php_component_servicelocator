@@ -33,12 +33,14 @@ interface AliasInterface
     public function hasAlias();
 
     /**
-     * Sets alias
+     * Sets alias. Common practice is to use a unique alias
+     * Example service.mailtransporter
      *
+     * @param string $alias
      * @return $this
      * @throws \RuntimeException - if you want to set an alias the second time
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-01
      */
-    public function setAlias();
+    public function setAlias($alias);
 }

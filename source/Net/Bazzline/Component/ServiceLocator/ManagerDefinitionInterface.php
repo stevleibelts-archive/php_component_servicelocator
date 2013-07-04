@@ -7,7 +7,7 @@
 namespace Net\Bazzline\Component\ServiceLocator;
 
 
-interface ManagerInterface extends AliasInterface
+interface ManagerDefinitionInterface extends AliasInterface
 {
     /**
      * Validates if given manager is an abstract manager or not
@@ -20,7 +20,7 @@ interface ManagerInterface extends AliasInterface
 
     public function setIsAbstract();
 
-    public function setParent(ManagerInterface $parent);
+    public function setParent(ManagerDefinitionInterface $parent);
 
     public function setFactory(FactoryServiceInterface $factory);
 
