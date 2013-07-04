@@ -15,5 +15,11 @@ namespace Net\Bazzline\Component\ServiceLocator;
  */
 interface BuilderDefinitionInterface
 {
-
+    /**
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return mixed
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-05
+     */
+    public function build(ParameterContainerInterface $parameterContainer, ServiceLocatorInterface $serviceLocator);
 }

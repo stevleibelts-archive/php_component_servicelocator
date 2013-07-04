@@ -17,11 +17,15 @@ interface ServiceDefinitionInterface extends DefinitionInterface
 {
     /**
      * @param boolean $isShared
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
      */
     public function setIsShared($isShared);
 
     /**
      * @return boolean
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
      */
     public function getIsShared();
 }
