@@ -15,9 +15,8 @@ use RuntimeException;
  * @package Net\Bazzline\Component\ServiceLocator
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-04
- * @todo implement interface
  */
-class Definition implements AliasInterface
+class Definition implements DefinitionInterface
 {
     /**
      * @var string
@@ -72,11 +71,7 @@ class Definition implements AliasInterface
     }
 
     /**
-     * @param string $methodName
-     * @param array $arguments
-     * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
+     * {@inheritdoc}
      */
     public function addMethodCall($methodName, array $arguments)
     {
@@ -89,9 +84,7 @@ class Definition implements AliasInterface
     }
 
     /**
-     * @return array
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
+     * {@inheritdoc}
      */
     public function getMethodCalls()
     {
@@ -99,10 +92,7 @@ class Definition implements AliasInterface
     }
 
     /**
-     * @param array $methodCalls
-     * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
+     * {@inheritdoc}
      */
     public function setMethodCalls(array $methodCalls)
     {
