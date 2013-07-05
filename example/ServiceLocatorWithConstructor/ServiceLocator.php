@@ -6,6 +6,7 @@
 
 namespace Example\ServiceLocatorWithConstructor\ServiceLocator;
 
+use Net\Bazzline\Component\ServiceLocator\InvokableDefinition;
 use Net\Bazzline\Component\ServiceLocator\InvokableDefinitionInterface;
 use Net\Bazzline\Component\ServiceLocator\ManagerDefinitionInterface;
 use Net\Bazzline\Component\ServiceLocator\ServiceDefinitionInterface;
@@ -58,6 +59,24 @@ class ServiceLocator implements ServiceLocatorInterface
         $this->invokables = array();
         $this->managers = array();
         $this->services = array();
+
+        $this->setUpInvokables();
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-06
+     */
+    private function setUpInvokables()
+    {
+        $definitionOne = new InvokableDefinition();
+        $definitionTwo = new InvokableDefinition();
+        $definitionOne->setName('\Example\ServiceLocatorWithConstructor\ServiceLocator\InvokableOne');
+        $definitionTwo->setName('\Example\ServiceLocatorWithConstructor\ServiceLocator\InvokableTwo');
+        $definitionOne->setAlias('InvokableOne');
+
+        $this->addInvokable($definitionOne);
+        $this->addInvokable($definitionTwo);
     }
 
     /**
