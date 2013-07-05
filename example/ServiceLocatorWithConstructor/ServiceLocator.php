@@ -8,6 +8,7 @@ namespace Example\ServiceLocatorWithConstructor\ServiceLocator;
 
 use Net\Bazzline\Component\ServiceLocator\InvokableDefinition;
 use Net\Bazzline\Component\ServiceLocator\InvokableDefinitionInterface;
+use Net\Bazzline\Component\ServiceLocator\ManagerDefinition;
 use Net\Bazzline\Component\ServiceLocator\ManagerDefinitionInterface;
 use Net\Bazzline\Component\ServiceLocator\ServiceDefinitionInterface;
 use Net\Bazzline\Component\ServiceLocator\ServiceLocatorInterface;
@@ -61,6 +62,7 @@ class ServiceLocator implements ServiceLocatorInterface
         $this->services = array();
 
         $this->setUpInvokables();
+        $this->setUpManagers();
     }
 
     /**
@@ -73,10 +75,32 @@ class ServiceLocator implements ServiceLocatorInterface
         $definitionTwo = new InvokableDefinition();
         $definitionOne->setName('\Example\ServiceLocatorWithConstructor\ServiceLocator\InvokableOne');
         $definitionTwo->setName('\Example\ServiceLocatorWithConstructor\ServiceLocator\InvokableTwo');
-        $definitionOne->setAlias('InvokableOne');
+        $definitionOne->setAlias('invokable.one');
 
         $this->addInvokable($definitionOne);
         $this->addInvokable($definitionTwo);
+
+        $this->alias[$definitionOne->getAlias()] = $definitionOne->getName();
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-06
+     */
+    private function setUpManagers()
+    {
+        $definitionOne = new ManagerDefinition();
+        $definitionOne->setName('\Example\ServiceLocatorWithConstructor\ServiceLocator\ManagerOne');
+        $definitionOne->setAlias('manager.one');
+        $definitionOne->addMethodCall('bar', array('bar is foo'));
+
+        $definitionTwo = new ManagerDefinition();
+        $definitionTwo->setName('\Example\ServiceLocatorWithConstructor\ServiceLocator\ManagerOne');
+        $definitionTwo->addConstructorArgument(array('foobar'));
+        $definitionTwo->addMethodCall('bar', array('bar is foo'));
+        $definitionTwo->addMethodCall('foo', array('foo is bar'));
+
+        $this->alias[$definitionOne->getAlias()] = $definitionOne->getName();
     }
 
     /**
