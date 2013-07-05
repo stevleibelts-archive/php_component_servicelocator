@@ -37,6 +37,8 @@ class ServiceDefinition extends Definition
     public function setIsShared($isShared)
     {
         $this->isShared = (boolean) $isShared;
+
+        return $this;
     }
 
     /**

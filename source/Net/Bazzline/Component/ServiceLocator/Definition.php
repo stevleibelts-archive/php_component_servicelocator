@@ -95,5 +95,7 @@ class Definition implements DefinitionInterface
             );
         }
         $this->name = (string) $name;
+
+        return $this;
     }
 }
