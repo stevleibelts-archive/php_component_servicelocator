@@ -13,7 +13,7 @@ namespace Net\Bazzline\Component\ServiceLocator;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-04
  */
-interface DefinitionInterface extends AliasableInterface
+interface DefinitionInterface extends AliasableInterface, NameableInterface
 {
     /**
      * @param string $methodName
@@ -64,21 +64,4 @@ interface DefinitionInterface extends AliasableInterface
      * @since 2013-07-04
      */
     public function getConstructorArguments();
-
-    /**
-     * @param string $name
-     * @return $this
-     * @throws \RuntimeException, if already set
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    public function setName($name);
-
-    /**
-     * @return string
-     * @throws \InvalidArgumentException, if not set
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    public function getName();
 }
