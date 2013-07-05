@@ -21,7 +21,7 @@ interface BuilderDefinitionAwareInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-04
      */
-    public function setBuilderDefinition($builderDefinition);
+    public function setBuilderDefinition(BuilderDefinitionInterface $builderDefinition);
 
     /**
      * @return \Net\Bazzline\Component\ServiceLocator\BuilderDefinitionInterface

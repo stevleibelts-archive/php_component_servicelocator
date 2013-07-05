@@ -6,6 +6,8 @@
 
 namespace Net\Bazzline\Component\ServiceLocator;
 
+use RuntimeException;
+
 /**
  * Class ServiceDefinition
  *
@@ -15,6 +17,13 @@ namespace Net\Bazzline\Component\ServiceLocator;
  */
 class ServiceDefinition extends Definition
 {
+    /**
+     * @var BuilderDefinitionInterface
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-04
+     */
+    protected $builderDefinition;
+
     /**
      * @var bool
      * @author stev leibelt <artodeto@arcor.de>
@@ -36,5 +45,28 @@ class ServiceDefinition extends Definition
     public function getIsShared()
     {
         return $this->isShared;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setBuilderDefinition(BuilderDefinitionInterface $builderDefinition)
+    {
+        $this->builderDefinition = $builderDefinition;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBuilderDefinition()
+    {
+        if (is_null($this->builderDefinition)) {
+            throw new RuntimeException(
+                'Empty mandatory value detected'
+            );
+        }
+        return $this->builderDefinition;
     }
 }

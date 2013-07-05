@@ -13,7 +13,7 @@ namespace Net\Bazzline\Component\ServiceLocator;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-04
  */
-interface ServiceDefinitionInterface extends DefinitionInterface
+interface ServiceDefinitionInterface extends DefinitionInterface, BuilderDefinitionAwareInterface
 {
     /**
      * @param boolean $isShared
