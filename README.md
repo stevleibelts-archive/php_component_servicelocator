@@ -116,3 +116,6 @@ Thanks to the:
 
 * [ServiceLocator mfowler](http://martinfowler.com/articles/injection.html#UsingAServiceLocator)
 * [ServiceLocator Oracle](http://www.oracle.com/technetwork/java/servicelocator-137181.html)
+* [ServiceLocator gameprogrammingpatterns](http://gameprogrammingpatterns.com/service-locator.html)
+* [PHP Frameworks wikipedia](http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks#PHP_2)
+* [Dependency Injection theserverside](http://www.theserverside.com/news/1321158/A-beginners-guide-to-Dependency-Injection)
