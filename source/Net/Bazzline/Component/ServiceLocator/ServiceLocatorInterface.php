@@ -13,7 +13,7 @@ namespace Net\Bazzline\Component\ServiceLocator;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-01
  */
-interface ServiceLocatorInterface extends AliasInterface
+interface ServiceLocatorInterface extends AliasableInterface
 {
     /**
      * @param ManagerDefinitionInterface $manager

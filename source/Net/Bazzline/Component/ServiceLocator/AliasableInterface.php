@@ -7,13 +7,13 @@
 namespace Net\Bazzline\Component\ServiceLocator;
 
 /**
- * Class AliasInterface
+ * Class AliasableInterface
  *
  * @package Net\Bazzline\Component\ServiceLocator
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-07-01
  */
-interface AliasInterface
+interface AliasableInterface
 {
     /**
      * @return string
