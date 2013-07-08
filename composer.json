@@ -4,7 +4,7 @@
     "description": "php component servicelocator",
     "keywords": ["php", "net_bazzline", "component", "servicelocator"],
     "homepage": "https://github.com/stevleibelt/php_component_servicelocator",
-    "license": "GPLv3",
+    "license": "LGPLv3",
     "authors": [
 	    {
             "name": "Stev Leibelt",
