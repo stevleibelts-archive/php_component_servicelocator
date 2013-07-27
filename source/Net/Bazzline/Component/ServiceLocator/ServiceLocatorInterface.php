@@ -16,11 +16,11 @@ namespace Net\Bazzline\Component\ServiceLocator;
 interface ServiceLocatorInterface
 {
     /**
-     * @param Configuration $configuration
+     * @param ConfigurationInterface $configuration
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-28
      */
-    public function __construct(Configuration $configuration);
+    public function __construct(ConfigurationInterface $configuration);
 
     /**
      * @param string $name
@@ -32,7 +32,7 @@ interface ServiceLocatorInterface
 
     /**
      * @param string $name
-     * @return mixed
+     * @return bool
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-28
      */
@@ -40,10 +40,10 @@ interface ServiceLocatorInterface
 
     /**
      * @param string $name
-     * @param mixed $value
-     * @return mixed
+     * @param BuildDefinitionInterface $dependencyDefinition
+     * @return $this
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-28
      */
-    public function setService($name, $value);
+    public function setService($name, BuildDefinitionInterface $dependencyDefinition);
 }
