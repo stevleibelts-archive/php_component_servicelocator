@@ -16,78 +16,34 @@ namespace Net\Bazzline\Component\ServiceLocator;
 interface ServiceLocatorInterface
 {
     /**
-     * @param ManagerDefinitionInterface $manager
-     * @return $this
+     * @param Configuration $configuration
      * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
+     * @since 2013-07-28
      */
-    public function addManager(ManagerDefinitionInterface $manager);
-
-    /**
-     * @param ServiceDefinitionInterface $service
-     * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    public function addService(ServiceDefinitionInterface $service);
-
-    /**
-     * @param InvokableDefinitionInterface $invokable
-     * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-04
-     */
-    public function addInvokable(InvokableDefinitionInterface $invokable);
-
-    /**
-     * Returns the manager by given name or alias
-     *
-     * @param string $name
-     * @return ManagerDefinitionInterface
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
-     */
-    public function getManager($name);
-
-    /**
-     * Returns the name for provided alias or null
-     *
-     * @param string $alias
-     * @return null|string
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
-     */
-    public function getName($alias);
+    public function __construct(Configuration $configuration);
 
     /**
      * @param string $name
      * @return mixed
      * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
+     * @since 2013-07-28
      */
     public function getService($name);
 
     /**
      * @param string $name
-     * @return bool
+     * @return mixed
      * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
-     */
-    public function hasManager($name);
-
-    /**
-     * @param string $name
-     * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
-     */
-    public function hasName($name);
-
-    /**
-     * @param string $name
-     * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-01
+     * @since 2013-07-28
      */
     public function hasService($name);
+
+    /**
+     * @param string $name
+     * @param mixed $value
+     * @return mixed
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-28
+     */
+    public function setService($name, $value);
 }
