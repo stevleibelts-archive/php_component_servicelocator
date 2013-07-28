@@ -4,7 +4,7 @@
  * @since 2013-07-28 
  */
 
-namespace Net\Bazzline\Component\ServiceLocator\Dependency;
+namespace Net\Bazzline\Component\ServiceLocator;
 
 use Net\Bazzline\Component\ServiceLocator\AliasableInterface;
 use Net\Bazzline\Component\ServiceLocator\NameableInterface;
