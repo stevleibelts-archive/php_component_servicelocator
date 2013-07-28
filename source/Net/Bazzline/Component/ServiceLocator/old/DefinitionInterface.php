@@ -4,7 +4,7 @@
  * @since 2013-07-04 
  */
 
-namespace Net\Bazzline\Component\ServiceLocator;
+namespace Net\Bazzline\Component\ServiceLocator\old;
 
 /**
  * Class DefinitionInterface

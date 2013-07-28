@@ -4,7 +4,7 @@
  * @since 2013-07-05 
  */
 
-namespace Net\Bazzline\Component\ServiceLocator;
+namespace Net\Bazzline\Component\ServiceLocator\old;
 
 /**
  * Class InvokableDefinition
