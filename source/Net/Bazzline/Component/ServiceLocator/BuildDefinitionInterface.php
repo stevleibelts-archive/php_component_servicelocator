@@ -15,7 +15,7 @@ namespace Net\Bazzline\Component\ServiceLocator;
  */
 interface BuildDefinitionInterface
 {
-    public function setDependency($classNameOrAlias, $isRequired = true);
+    public function setDependency(DependencyInterface $dependency);
 
     public function hasDependency($classNameOrAlias);
 
@@ -25,7 +25,7 @@ interface BuildDefinitionInterface
 
     public function getDependencies();
 
-    public function setParameter($name, $value, $isRequired = true);
+    public function setParameter(ParameterInterface $parameter);
 
     public function hasParameter($name);
 
