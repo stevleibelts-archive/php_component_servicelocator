@@ -7,6 +7,27 @@
 namespace Net\Bazzline\Component\ServiceLocator\DependencyInjection;
 
 /**
+ * A Container can inject parameters or objects.
+ * They can be injected via method calls or via constructor.
+ *
+ * Config example
+ *
+ * Container:
+ *  class:
+ *      MyNextClass
+ *  constructor:
+ *      foo -- string parameter
+ *      MyClass -- class name parameter
+ *  methods:
+ *      setBar:
+ *          foo
+ *      setMyClasses:
+ *          MyClass
+ *          MyOtherClass
+ *
+ */
+
+/**
  * Class ContainerInterface
  *
  * @package Net\Bazzline\Component\ServiceLocator\DependencyInjection
