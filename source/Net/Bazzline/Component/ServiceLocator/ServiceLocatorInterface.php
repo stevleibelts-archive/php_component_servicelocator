@@ -39,16 +39,15 @@ interface ServiceLocatorInterface
     public function hasService($name);
 
     /**
-     * @param string $name
-     * @param BuildDefinitionInterface $dependencyDefinition
+     * @param ServiceInterface $service
      * @return $this
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-28
      */
-    public function setService($name, BuildDefinitionInterface $dependencyDefinition);
+    public function addService(ServiceInterface $service);
 
     /**
-     * @return mixed
+     * @return ServiceInterface[]
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-08-01
      */
