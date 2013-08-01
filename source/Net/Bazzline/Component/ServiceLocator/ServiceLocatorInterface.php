@@ -46,4 +46,11 @@ interface ServiceLocatorInterface
      * @since 2013-07-28
      */
     public function setService($name, BuildDefinitionInterface $dependencyDefinition);
+
+    /**
+     * @return mixed
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-08-01
+     */
+    public function getAll();
 }
